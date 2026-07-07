@@ -1,0 +1,332 @@
+/* ==========================================================
+   TECHNICKÁ ČETA
+   Skok vysoký
+========================================================== */
+
+
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+/* ==========================================================
+   CELÁ STRÁNKA
+========================================================== */
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#f4f5f7;
+
+    color:#222;
+
+    padding:16px;
+
+}
+
+
+
+/* ==========================================================
+   HLAVIČKA
+========================================================== */
+
+.page-header{
+
+    margin-bottom:18px;
+
+}
+
+
+
+/* ==========================================================
+   TLAČÍTKO ZPĚT
+========================================================== */
+
+.back-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    text-decoration:none;
+
+    color:#666;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    margin-bottom:14px;
+
+    transition:.2s;
+
+}
+
+.back-button:hover{
+
+    color:#c4001a;
+
+}
+
+
+
+/* ==========================================================
+   NÁZEV DISCIPLÍNY
+========================================================== */
+
+.page-header h1{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:#222;
+
+}
+
+
+
+/* ==========================================================
+   FOTOGRAFIE SEKTORU
+========================================================== */
+
+.sector-photo{
+
+    margin-bottom:22px;
+
+}
+
+
+
+.sector-photo img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:18px;
+
+    object-fit:cover;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+
+}
+
+
+
+/* ==========================================================
+   NADPISY SEKCÍ
+========================================================== */
+
+h2{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+    color:#222;
+
+}/* ==========================================================
+   SEZNAM POMŮCEK
+========================================================== */
+
+.equipment{
+
+    margin-bottom:28px;
+
+}
+
+
+
+/* ==========================================================
+   KARTA MÍSTA
+========================================================== */
+
+.location{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:16px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+
+
+/* ==========================================================
+   NÁZEV MÍSTA
+========================================================== */
+
+.location h3{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#c4001a;
+
+    margin-bottom:14px;
+
+}
+
+
+
+/* ==========================================================
+   ŘÁDEK POMŮCKY
+========================================================== */
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 0;
+
+    cursor:pointer;
+
+    border-bottom:1px solid #ececec;
+
+    user-select:none;
+
+}
+
+
+
+.check-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+/* ==========================================================
+   CHECKBOX
+========================================================== */
+
+.check-item input{
+
+    width:22px;
+
+    height:22px;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+}
+
+
+
+/* ==========================================================
+   TEXT POMŮCKY
+========================================================== */
+
+.check-item span{
+
+    font-size:16px;
+
+    line-height:1.4;
+
+    color:#333;
+
+}
+
+
+
+/* ==========================================================
+   POZNÁMKY
+========================================================== */
+
+.notes{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+
+
+.notes ul{
+
+    padding-left:20px;
+
+}
+
+
+
+.notes li{
+
+    margin-bottom:10px;
+
+    line-height:1.5;
+
+}
+
+
+
+/* ==========================================================
+   MOBIL
+========================================================== */
+
+@media(max-width:420px){
+
+    body{
+
+        padding:14px;
+
+    }
+
+    .page-header h1{
+
+        font-size:24px;
+
+    }
+
+    h2{
+
+        font-size:20px;
+
+    }
+
+    .location h3{
+
+        font-size:17px;
+
+    }
+
+    .check-item span{
+
+        font-size:15px;
+
+    }
+
+}
