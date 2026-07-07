@@ -36,7 +36,7 @@ body{
 
     color:#222;
 
-    padding:12px;
+    padding:4px 16px 12px;
 
 }
 
@@ -62,9 +62,9 @@ body{
 
     align-items:center;
 
-    margin-top:12px;
+    margin-top:0;
 
-    margin-bottom:18px;
+    margin-bottom:2px;
 
 }
 
@@ -82,7 +82,7 @@ body{
 
     align-items:center;
 
-    gap:10px;
+    gap:6px;
 
 }
 
@@ -90,23 +90,24 @@ body{
 
 .logo{
 
-    width:25px;
+    width:32px;
 
-    height:25px;px;
+    height:32px;px;
 
     object-fit:contain;
 
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.08));
 }
 
 
 
 .brand h1{
 
-    font-size:15px;
+    font-size:17px;
 
-    font-weight:800;
+    font-weight:700;
 
-    letter-spacing:.3px;
+    letter-spacing:.-0.3px;
 
     color:#1f1f1f;
 
@@ -135,16 +136,48 @@ body{
 
     border-radius:16px;
 
-    margin-bottom:16px;
+    margin-top:-2px;
+
+    margin-bottom:14px;
 
     padding:0 22px;
 
 
     overflow:hidden;
 
+
+    max-width:320px;
+    
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    margin:2px 0 16px;
+
 }
 
+.ticker-line{
+    width:85%;
+    height:2px;
+    border-radius:999px;
 
+    background:linear-gradient(
+        to right,
+        transparent,
+        #b3bac4 18%,
+        #b3bac4 82%,
+        transparent
+    );
+
+}
+.ticker-content{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+}
 
 /*
 ==========================================================
@@ -156,18 +189,23 @@ body{
 
     width:100%;
 
+    max-width:320px;
+
     text-align:center;
 
     font-size:10px;
 
-    font-weight:600;
+    font-weight:500;
 
-    color:#555;
+    color:#777;
+
+    font-style:italic;
 
     line-height:1.4;
 
-    transition:opacity .35s ease;
+    transition:opacity .8s ease;
 
+  
 }/*
 ==========================================================
     MŘÍŽKA DISCIPLÍN
@@ -196,7 +234,7 @@ body{
 
     position:relative;
 
-    aspect-ratio:4/5;
+    aspect-ratio:1/1;
 
     overflow:hidden;
 
