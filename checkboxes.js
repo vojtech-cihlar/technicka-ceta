@@ -1,24 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // název stránky (vyska, dalka...)
     const page = location.pathname
         .split("/")
         .pop()
         .replace(".html", "");
 
-    // všechny checkboxy
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
     checkboxes.forEach((checkbox, index) => {
 
         const key = page + "-" + index;
 
-        // načtení uloženého stavu
         if (localStorage.getItem(key) === "true") {
             checkbox.checked = true;
         }
 
-        // uložení při změně
         checkbox.addEventListener("change", () => {
             localStorage.setItem(key, checkbox.checked);
         });
