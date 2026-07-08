@@ -7,7 +7,7 @@ const now = new Date();
 // "Technický den" začíná ve 3:00
 const technicalDate = new Date(now);
 
-if (technicalDate.getHours() < 1) {
+if (technicalDate.getHours() < 3) {
     technicalDate.setDate(technicalDate.getDate() - 1);
 }
 
