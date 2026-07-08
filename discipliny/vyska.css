@@ -142,15 +142,15 @@ body{
 
     display:flex;
 
-    align-items:flex-end;
+    align-items:flex-start;
 
-    justify-content:space-between;
+    justify-content:flex-start;
 
-    gap:18px;
+    gap:30px;
 
-     margin-top:12px;
+    margin-top:5;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
 
 }
 
@@ -179,7 +179,9 @@ body{
 
 .progress-number{
 
-   font-size:20px;
+   font-size:12px;
+
+   margin-right:-10px;
 
     font-weight:700;
 
@@ -197,7 +199,7 @@ body{
 
     margin-top:6px;
 
-    font-size:15px;
+    font-size:8px;
 
     color:#666;
 
@@ -207,54 +209,93 @@ body{
 
 .progress-logo{
 
-    width:70px;
+    width:60px;
 
     height:auto;
 
     opacity:0.04;
 
-    margin-bottom:6px;
+    margin-bottom:0px;
 
-    margin-top:-8px;
+    margin-top:-4px;
 
     transition:opacity .3s ease;
 
-}
+    margin-right: -10px;
 
+}
 
 
 /* ==========================================================
-   PRAVÁ ČÁST - FOTOGRAFIE
+   STOH FOTOGRAFIÍ
 ========================================================== */
 
-.sector-photo{
+.photo-stack{
 
-    width:185px;
+    position:relative;
+
+    width:150px;
+
+    height:100px;
 
     flex-shrink:0;
 
-     margin-top:-45px;
+    margin-top:-34px;
+
+    margin-left:0px;
+
 
 }
 
+.photo-stack img{
 
-
-.sector-photo img{
+    position:absolute;
 
     width:100%;
 
-    height:125px;
+    height:100%;
 
     object-fit:cover;
-
-    display:block;
 
     border-radius:18px;
 
     box-shadow:0 6px 14px rgba(0,0,0,.10);
 
+    transition:.25s;
+
 }
 
+.photo-stack img:nth-child(1){
+
+    z-index:3;
+
+     box-shadow:0 6px 14px rgba(0,0,0,.12);
+
+}
+
+.photo-stack img:nth-child(2){
+
+    top: 3px;
+
+    left:3px;
+
+    z-index:2;
+
+     box-shadow:0 4px 10px rgba(0,0,0,.08);
+
+}
+
+.photo-stack img:nth-child(3){
+
+    top:6px;
+
+    left:6px;
+
+    z-index:1;
+
+     box-shadow:0 2px 6px rgba(0,0,0,.05);
+
+}
 
 
 /* ==========================================================
