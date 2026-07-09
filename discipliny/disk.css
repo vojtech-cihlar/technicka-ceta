@@ -1,8 +1,10 @@
-/* ==========================================================
-   TECHNICKÁ ČETA
-   Skok vysoký
-========================================================== */
 
+
+
+/* ==========================================================
+TECHNICKÁ ČETA
+   Disk
+========================================================== */
 
 
 /* ==========================================================
@@ -13,6 +15,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -25,23 +28,39 @@ body{
 
     font-family:"Inter",sans-serif;
 
-    background:#f4f5f7;
+    background:#f4f6f8;
 
     color:#222;
 
-    padding:16px;
+    padding:8px 16px 20px;
+
+    min-height:100vh;
 
 }
 
 
 
 /* ==========================================================
-   HLAVIČKA
+   HORNÍ PANEL
 ========================================================== */
 
-.page-header{
+.top-panel{
 
-    margin-bottom:18px;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(245,246,248,.94);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 2px 0;
 
 }
 
@@ -53,99 +72,287 @@ body{
 
 .back-button{
 
-    display:inline-flex;
+    width:30px;
+
+    height:30px;
+
+    display:flex;
+
+    justify-content:center;
 
     align-items:center;
 
-    gap:6px;
-
     text-decoration:none;
 
-    color:#666;
+    color:#555;
 
-    font-size:15px;
+    background:#f4f6f8;
 
-    font-weight:500;
+    border-radius:50%;
 
-    margin-bottom:14px;
+    border:1px solid rgba(255,255,255,.75);
 
-    transition:.2s;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.06),
+        inset 0 1px 0 rgba(255,255,255,.95);
+
+    margin-left:16px;
+
+    margin-bottom:8px;
+
+    transform: translateY(3px);
+
+     transition:
+        opacity .12s ease,
+        transform .12s ease;
 
 }
 
 .back-button:hover{
 
-    color:#c4001a;
+    background:#eef1f4;
+
+}
+
+.back-button:active{
+
+   
+
+        transform: translateY(3px) scale(97);
+
+    opacity:.65;
+
+}
+
+.back-icon{
+
+    width:18px;
+
+    height:18px;
+
+    color:#444;
 
 }
 
 
 
 /* ==========================================================
-   NÁZEV DISCIPLÍNY
+   INFORMAČNÍ KARTA
 ========================================================== */
+.top-card{
 
-.page-header h1{
+    position: relative;
 
-    font-size:28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 
-    font-weight:800;
+    height: 60px;
 
-    color:#222;
+    transform: translateY(-6px);
+
+}
+
+/* ========================= */
+/*      HORNÍ LINKA          */
+/* ========================= */
+
+.top-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+    width:12%;
+    height:0px;
+    border-radius:999px;
+
+    top:0px;
+
+  background: linear-gradient(
+    to right,
+
+     transparent,
+    #b3bac4 18%,
+    #b3bac4 82%,
+     transparent
+);
+
+}
+
+/* ========================= */
+/*      DOLNÍ LINKA          */
+/* ========================= */
+
+.top-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+    width:72%;
+    height:2px;
+    border-radius:999px;
+
+    top:46px;
+
+   background: linear-gradient(
+    to right,
+
+     transparent,
+    #b3bac4 18%,
+    #b3bac4 82%,
+     transparent
+);
 
 }
 
 
 
 /* ==========================================================
-   FOTOGRAFIE SEKTORU
+   POČÍTADLO
 ========================================================== */
 
-.sector-photo{
+.progress-box{
 
-    margin-bottom:22px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
 }
 
+.progress-number{
 
-
-.sector-photo img{
-
-    width:100%;
-
-    display:block;
-
-    border-radius:18px;
-
-    object-fit:cover;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.10);
-
-}
-
-
-
-/* ==========================================================
-   NADPISY SEKCÍ
-========================================================== */
-
-h2{
-
-    font-size:22px;
+    font-size:16px;
 
     font-weight:700;
 
-    margin-bottom:16px;
+    color:#3f434a;
 
-    color:#222;
+    white-space:nowrap;
 
-}/* ==========================================================
+     transform:translateY(-6px);
+
+}
+
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.progress-logo{
+
+    width:40px;
+
+    height:auto;
+
+    opacity:.04;
+
+    transform:translateY(-6px);
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease,
+        width .3s ease;
+
+    pointer-events:none;
+
+}
+
+
+
+/* ==========================================================
+   GALERIE
+========================================================== */
+
+
+.gallery-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.gallery-button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    cursor:pointer;
+
+    color:#3f434a;
+
+    width:100%;
+
+    height:100%;
+
+    transform:translateX(1px);
+
+      transition:
+        opacity .12s ease,
+        transform .12s ease;
+
+
+}
+
+.gallery-button:active{
+
+      transform: translateX(1px) scale(97);
+
+    opacity:.65;
+
+}
+
+.gallery-icon{
+
+    width:32px;
+
+    height:32px;
+
+     transform:translateY(-6.5px);
+
+}
+
+/* ==========================================================
    SEZNAM POMŮCEK
 ========================================================== */
 
 .equipment{
 
-    margin-bottom:28px;
+    margin-bottom:0;
+
+    margin-top: 100px;
 
 }
 
@@ -157,15 +364,21 @@ h2{
 
 .location{
 
-    background:white;
+    width:95%;
 
-    border-radius:16px;
+    margin:0 auto 10px;
 
-    padding:16px;
+    padding:14px 16px;
 
-    margin-bottom:18px;
+    background:#f4f6f8;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.05),
+        inset 0 1px 0 rgba(255,255,255,.9);
 
 }
 
@@ -177,13 +390,15 @@ h2{
 
 .location h3{
 
-    font-size:18px;
+    font-size:13px;
 
-    font-weight:700;
+    font-weight:600;
 
-    color:#c4001a;
+    color:#666;
 
-    margin-bottom:14px;
+    margin-bottom:8px;
+
+    letter-spacing:.2px;
 
 }
 
@@ -201,7 +416,7 @@ h2{
 
     gap:12px;
 
-    padding:10px 0;
+    padding:8px 0;
 
     cursor:pointer;
 
@@ -210,8 +425,6 @@ h2{
     user-select:none;
 
 }
-
-
 
 .check-item:last-child{
 
@@ -227,13 +440,53 @@ h2{
 
 .check-item input{
 
-    width:22px;
+    appearance:none;
 
-    height:22px;
+    -webkit-appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border:2px solid #cfd6dd;
+
+    border-radius:50%;
+
+    background:#fff;
 
     cursor:pointer;
 
+    transition:.2s;
+
     flex-shrink:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.check-item input:checked{
+
+    background:#3bb54a;
+
+    border-color:#3bb54a;
+
+}
+
+.check-item input:checked::after{
+
+    content:"✓";
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    line-height:1;
 
 }
 
@@ -245,15 +498,15 @@ h2{
 
 .check-item span{
 
-    font-size:16px;
+    font-size:12px;
 
-    line-height:1.4;
+    font-weight:500;
 
-    color:#333;
+    color:#444;
+
+    line-height:1.45;
 
 }
-
-
 
 /* ==========================================================
    POZNÁMKY
@@ -261,72 +514,154 @@ h2{
 
 .notes{
 
-    background:white;
+    width:95%;
 
-    border-radius:16px;
+    margin:0 auto 20px;
 
-    padding:18px;
+    padding:0;
 
-    margin-bottom:30px;
+    background:none;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    border:none;
 
-}
-
-
-
-.notes ul{
-
-    padding-left:20px;
+    box-shadow:none;
 
 }
 
+.notes h2{
 
+    font-size:11px;
 
-.notes li{
+    font-weight:600;
 
-    margin-bottom:10px;
+    color:#555;
+
+    margin-bottom:2px;
+
+}
+
+.notes p{
+
+    font-size:10px;
+
+    color:#666;
 
     line-height:1.5;
+
+    font-style:italic;
 
 }
 
 
 
 /* ==========================================================
-   MOBIL
+   STICKY REŽIM
+   (aktivuje se později přes JavaScript)
 ========================================================== */
 
-@media(max-width:420px){
+body.sticky-header .top-panel{
 
-    body{
+    position:sticky;
 
-        padding:14px;
+    top:0;
 
-    }
+    z-index:1000;
 
-    .page-header h1{
+    background:#f4f6f8;
 
-        font-size:24px;
+    padding-top:6px;
 
-    }
+    padding-bottom:6px;
 
-    h2{
+}
 
-        font-size:20px;
+body.sticky-header .top-card{
 
-    }
+    height:56px;
 
-    .location h3{
+    transition:height .25s ease;
 
-        font-size:17px;
+}
 
-    }
+body.sticky-header .progress-logo{
 
-    .check-item span{
+    width:56px;
 
-        font-size:15px;
+    transform:none;
 
-    }
+}
+
+body.sticky-header .photo-stack{
+
+    width:52px;
+
+    height:38px;
+
+}
+
+body.sticky-header .progress-number{
+
+    font-size:17px;
+
+}
+
+body.sticky-header .top-card{
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.10),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+}
+
+.gallery-dots{
+
+    position:fixed;
+
+    left:50%;
+    bottom:24px;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+    gap:10px;
+
+    z-index:10000;
+
+}
+
+.gallery-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.gallery-dot.active{
+
+    width:12px;
+    height:12px;
+
+    background:white;
+
+}
+
+button,
+button:focus,
+button:focus-visible,
+a,
+a:focus,
+a:focus-visible{
+
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
 
 }
