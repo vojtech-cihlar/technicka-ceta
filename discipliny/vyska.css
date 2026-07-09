@@ -94,7 +94,7 @@ body{
 
     transition:.2s;
 
-    margin-left:4px;
+    margin-left:16px;
 
     margin-bottom:8px;
 
@@ -137,7 +137,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 
-    height: 50px;
+    height: 60px;
 
     transform: translateY(-6px);
 
@@ -155,27 +155,19 @@ body{
 
     left:50%;
     transform:translateX(-50%);
-    width:72%;
-    height:2px;
+    width:12%;
+    height:1px;
     border-radius:999px;
 
-    top:-1px;
+    top:0px;
 
   background: linear-gradient(
     to right,
 
-    transparent,
-
-    rgba(179,186,196,.20) 18%,
-    rgba(179,186,196,.35) 35%,
-
-    rgba(179,186,196,.90) 48%,
-    rgba(179,186,196,.90) 52%,
-
-    rgba(179,186,196,.35) 65%,
-    rgba(179,186,196,.20) 82%,
-
-    transparent
+     transparent,
+    #b3bac4 18%,
+    #b3bac4 82%,
+     transparent
 );
 
 }
@@ -196,23 +188,15 @@ body{
     height:2px;
     border-radius:999px;
 
-    top:36px;
+    top:46px;
 
    background: linear-gradient(
     to right,
 
-    transparent,
-
-    rgba(179,186,196,.20) 18%,
-    rgba(179,186,196,.35) 35%,
-
-    rgba(179,186,196,.90) 48%,
-    rgba(179,186,196,.90) 52%,
-
-    rgba(179,186,196,.35) 65%,
-    rgba(179,186,196,.20) 82%,
-
-    transparent
+     transparent,
+    #b3bac4 18%,
+    #b3bac4 82%,
+     transparent
 );
 
 }
