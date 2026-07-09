@@ -12,6 +12,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -640,5 +641,16 @@ body.sticky-header .top-card{
 
 }
 
+button,
+button:focus,
+button:focus-visible,
+a,
+a:focus,
+a:focus-visible{
+
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
+
+}
 
 
