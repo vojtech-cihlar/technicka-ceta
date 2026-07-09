@@ -42,9 +42,21 @@ body{
 
 .top-panel{
 
-    position:relative;
+    position: fixed;
 
-    margin-bottom:5px;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(245,246,248,.94);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 2px 0;
 
 }
 
@@ -56,9 +68,9 @@ body{
 
 .back-button{
 
-    width:34px;
+    width:30px;
 
-    height:34px;
+    height:30px;
 
     display:flex;
 
@@ -84,7 +96,9 @@ body{
 
     margin-left:4px;
 
-    margin-bottom:12px;
+    margin-bottom:8px;
+
+    transform: translateY(3px);
 
 }
 
@@ -123,9 +137,9 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 
-    height: 55px;
+    height: 50px;
 
-    transform: translateY(-2px);
+    transform: translateY(-6px);
 
 }
 
@@ -229,7 +243,7 @@ body{
 
     white-space:nowrap;
 
-     transform:translateY(-9px);
+     transform:translateY(-6px);
 
 }
 
@@ -259,7 +273,7 @@ body{
 
     opacity:.04;
 
-    transform:translateY(-9px);
+    transform:translateY(-6px);
 
     transition:
         transform .3s ease,
@@ -328,7 +342,7 @@ body{
 
     height:32px;
 
-     transform:translateY(-8px);
+     transform:translateY(-6.5px);
 
 }
 
@@ -339,6 +353,8 @@ body{
 .equipment{
 
     margin-bottom:0;
+
+    margin-top: 100px;
 
 }
 
