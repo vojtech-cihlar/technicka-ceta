@@ -4,9 +4,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!infoText || typeof zajimavosti === "undefined") return;
 
+    // Zamíchání pole (Fisher-Yates)
+    function zamichejPole(pole) {
+
+        const novePole = [...pole];
+
+        for (let i = novePole.length - 1; i > 0; i--) {
+
+            const j = Math.floor(Math.random() * (i + 1));
+
+            [novePole[i], novePole[j]] = [novePole[j], novePole[i]];
+        }
+
+        return novePole;
+    }
+
+    let seznam = zamichejPole(zajimavosti);
     let aktualni = 0;
 
-    infoText.textContent = zajimavosti[aktualni];
+    infoText.textContent = seznam[aktualni];
 
     setInterval(() => {
 
@@ -16,11 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             aktualni++;
 
-            if (aktualni >= zajimavosti.length) {
+            // Pokud jsme zobrazili všechny, znovu zamícháme
+            if (aktualni >= seznam.length) {
+
+                seznam = zamichejPole(zajimavosti);
                 aktualni = 0;
+
             }
 
-            infoText.textContent = zajimavosti[aktualni];
+            infoText.textContent = seznam[aktualni];
 
             infoText.style.opacity = 1;
 

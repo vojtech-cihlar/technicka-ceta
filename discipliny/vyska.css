@@ -44,7 +44,7 @@ body{
 
     position:relative;
 
-    margin-bottom:18px;
+    margin-bottom:5px;
 
 }
 
@@ -115,36 +115,95 @@ body{
 /* ==========================================================
    INFORMAČNÍ KARTA
 ========================================================== */
-
 .top-card{
 
-    position:relative;
+    position: relative;
 
-    width:95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 
-    margin:0 auto;
+    height: 55px;
 
-    height:25px;
-
-    background:#f4f6f8;
-
-    border-radius:18px;
-
-    border:1px solid rgba(255,255,255,.75);
-
-    box-shadow:
-          0 2px 6px rgba(0,0,0,.04),
-    inset 0 1px 0 rgba(255,255,255,.9);
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr 1fr;
-
-    align-items:center;
-
-    overflow:visible;
+    transform: translateY(-2px);
 
 }
+
+/* ========================= */
+/*      HORNÍ LINKA          */
+/* ========================= */
+
+.top-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+    width:72%;
+    height:2px;
+    border-radius:999px;
+
+    top:-1px;
+
+  background: linear-gradient(
+    to right,
+
+    transparent,
+
+    rgba(179,186,196,.20) 18%,
+    rgba(179,186,196,.35) 35%,
+
+    rgba(179,186,196,.90) 48%,
+    rgba(179,186,196,.90) 52%,
+
+    rgba(179,186,196,.35) 65%,
+    rgba(179,186,196,.20) 82%,
+
+    transparent
+);
+
+}
+
+/* ========================= */
+/*      DOLNÍ LINKA          */
+/* ========================= */
+
+.top-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    transform:translateX(-50%);
+    width:72%;
+    height:2px;
+    border-radius:999px;
+
+    top:36px;
+
+   background: linear-gradient(
+    to right,
+
+    transparent,
+
+    rgba(179,186,196,.20) 18%,
+    rgba(179,186,196,.35) 35%,
+
+    rgba(179,186,196,.90) 48%,
+    rgba(179,186,196,.90) 52%,
+
+    rgba(179,186,196,.35) 65%,
+    rgba(179,186,196,.20) 82%,
+
+    transparent
+);
+
+}
+
+
 
 /* ==========================================================
    POČÍTADLO
@@ -162,7 +221,7 @@ body{
 
 .progress-number{
 
-    font-size:15px;
+    font-size:16px;
 
     font-weight:700;
 
@@ -170,7 +229,7 @@ body{
 
     white-space:nowrap;
 
-     transform:translateY(-8px);
+     transform:translateY(-9px);
 
 }
 
@@ -252,6 +311,8 @@ body{
 
     height:100%;
 
+    transform:translateX(1px);
+
 
 }
 
@@ -263,9 +324,9 @@ body{
 
 .gallery-icon{
 
-    width:25px;
+    width:32px;
 
-    height:25px;
+    height:32px;
 
      transform:translateY(-8px);
 
