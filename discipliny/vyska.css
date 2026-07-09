@@ -101,6 +101,10 @@ body{
 
     transform: translateY(3px);
 
+     transition:
+        opacity .12s ease,
+        transform .12s ease;
+
 }
 
 .back-button:hover{
@@ -112,6 +116,10 @@ body{
 .back-button:active{
 
     transform:scale(.95);
+
+        transform: translateY(3px);
+
+    opacity:.65;
 
 }
 
@@ -157,7 +165,7 @@ body{
     left:50%;
     transform:translateX(-50%);
     width:12%;
-    height:1px;
+    height:0px;
     border-radius:999px;
 
     top:0px;
@@ -312,12 +320,20 @@ body{
 
     transform:translateX(1px);
 
+      transition:
+        opacity .12s ease,
+        transform .12s ease;
+
 
 }
 
 .gallery-button:active{
 
     transform:scale(.95);
+
+      transform: translateX(1px);
+
+    opacity:.65;
 
 }
 
