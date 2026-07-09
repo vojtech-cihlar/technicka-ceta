@@ -538,6 +538,46 @@ body.sticky-header .top-card{
 
 }
 
+.gallery-dots{
+
+    position:fixed;
+
+    left:50%;
+    bottom:24px;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+    gap:10px;
+
+    z-index:10000;
+
+}
+
+.gallery-dot{
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transition:.25s;
+
+    cursor:pointer;
+
+}
+
+.gallery-dot.active{
+
+    width:12px;
+    height:12px;
+
+    background:white;
+
+}
 
 
 

@@ -418,3 +418,13 @@ div.pswp__img--placeholder,
 .pswp--one-slide .pswp__counter {
   display: none;
 }
+
+/* Skryje počítadlo */
+.pswp__counter{
+    display:none !important;
+}
+
+/* Skryje lupu */
+.pswp__button--zoom{
+    display:none !important;
+}
