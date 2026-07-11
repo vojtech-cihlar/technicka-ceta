@@ -10,9 +10,9 @@ if (savedDate !== today) {
     // smaže všechny uložené checkboxy
     Object.keys(localStorage).forEach(key => {
 
-        if (/-\d+$/.test(key)) {
-            localStorage.removeItem(key);
-        }
+       if (key.includes("_")) {
+    localStorage.removeItem(key);
+}
 
     });
 
