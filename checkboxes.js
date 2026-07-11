@@ -1,20 +1,11 @@
 /* ==========================================================
-   AUTOMATICKÝ RESET CHECKBOXŮ VE 3:00
+   AUTOMATICKÝ RESET CHECKBOXŮ PŘI ZMĚNĚ DATA
 ========================================================== */
 
-const now = new Date();
+const today = new Date().toISOString().split("T")[0];
+const savedDate = localStorage.getItem("lastOpenDate");
 
-// "Technický den" začíná ve 3:00
-const technicalDate = new Date(now);
-
-if (technicalDate.getHours() < 3) {
-    technicalDate.setDate(technicalDate.getDate() - 1);
-}
-
-const todayKey = technicalDate.toISOString().split("T")[0];
-const savedDay = localStorage.getItem("technicalDay");
-
-if (savedDay !== todayKey) {
+if (savedDate !== today) {
 
     // smaže všechny uložené checkboxy
     Object.keys(localStorage).forEach(key => {
@@ -25,8 +16,10 @@ if (savedDay !== todayKey) {
 
     });
 
-    localStorage.setItem("technicalDay", todayKey);
 }
+
+// uloží datum posledního otevření aplikace
+localStorage.setItem("lastResetDate", today);
 
 
 /* ==========================================================
