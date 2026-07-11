@@ -1,41 +1,24 @@
 /* ==========================================================
-   RESET CHECKBOXŮ PŘI ZMĚNĚ TECHNICKÉHO DNE (3:00)
+   AUTOMATICKÝ RESET CHECKBOXŮ PŘI ZMĚNĚ DATA
 ========================================================== */
 
-function getTechnicalDay() {
+const today = new Date().toISOString().split("T")[0];
+const savedDate = localStorage.getItem("lastOpenDate");
 
-    const now = new Date();
+if (savedDate !== today) {
 
-    // před třetí hodinou stále patří předchozímu dni
-    if (now.getHours() < 3) {
-        now.setDate(now.getDate() - 1);
-    }
-
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
-}
-
-const currentDay = getTechnicalDay();
-const savedDay = localStorage.getItem("technicalDay");
-
-if (savedDay && savedDay !== currentDay) {
-
-    // smaže pouze checkboxy
+    // smaže všechny uložené checkboxy
     Object.keys(localStorage).forEach(key => {
 
-        if (/^[a-z]+_\d+$/.test(key)) {
-            localStorage.removeItem(key);
-        }
-
+      if (key.includes("_")) {
+    localStorage.removeItem(key);
+}
     });
 
 }
 
-localStorage.setItem("technicalDay", currentDay);
-
+// uloží datum posledního otevření aplikace
+localStorage.setItem("lastOpenDate", today);
 
 /* ==========================================================
    CHECKBOXY + POČÍTADLO
