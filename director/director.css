@@ -1,0 +1,522 @@
+/*
+==========================================================
+    TECHNICKÁ ČETA - DIRECTOR
+    director.css
+==========================================================
+*/
+
+
+
+/*
+==========================================================
+    RESET
+==========================================================
+*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+/*
+==========================================================
+    CELÁ STRÁNKA
+==========================================================
+*/
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#f4f6f8;
+
+    color:#222;
+
+    padding:8px 16px 20px;
+
+    min-height:100vh;
+
+}
+
+
+
+/*
+==========================================================
+    TLAČÍTKO ZPĚT
+==========================================================
+*/
+
+.back-button{
+
+    width:30px;
+
+    height:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#555;
+
+    background:#f4f6f8;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.06),
+        inset 0 1px 0 rgba(255,255,255,.95);
+
+    margin:4px 0 -26px 0;
+
+    transition:
+        opacity .15s ease,
+        transform .15s ease;
+
+}
+
+.back-button:hover{
+
+    background:#eef1f4;
+
+}
+
+.back-button:active{
+
+    transform:scale(.96);
+
+    opacity:.65;
+
+}
+
+.back-icon{
+
+    width:18px;
+
+    height:18px;
+
+    color:#444;
+
+}
+
+
+
+/*
+==========================================================
+    HORNÍ LIŠTA
+==========================================================
+*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:2px;
+
+}
+
+
+
+/*
+==========================================================
+    LOGO + NADPIS
+==========================================================
+*/
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+
+
+.logo{
+
+    width:32px;
+
+    height:32px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.08));
+
+}
+
+
+
+.brand h1{
+
+    font-size:17px;
+
+    font-weight:700;
+
+    letter-spacing:-0.3px;
+
+    color:#1f1f1f;
+
+}
+
+
+
+/*
+==========================================================
+    INFORMAČNÍ LIŠTA
+==========================================================
+*/
+
+.ticker{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    margin:2px auto 20px;
+
+    max-width:340px;
+
+}
+
+
+
+.ticker-line{
+
+    width:85%;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+        to right,
+
+        transparent,
+
+        #b3bac4 18%,
+
+        #b3bac4 82%,
+
+        transparent
+
+    );
+
+}
+
+
+
+.ticker-content{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+#infoText{
+
+    text-align:center;
+
+    font-size:10px;
+
+    font-weight:500;
+
+    color:#777;
+
+    font-style:italic;
+
+    line-height:1.4;
+
+}
+
+/*
+==========================================================
+    KARTY ZÁVODŮ
+==========================================================
+*/
+
+.events{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.event-card{
+
+    width:95%;
+
+    margin:0 auto;
+
+    padding:8px 16px;
+
+    background:#f4f6f8;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.05),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        opacity .18s ease;
+
+}
+
+.event-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.10),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+}
+
+.event-card:active{
+
+    transform:scale(.985);
+
+    opacity:.75;
+
+}
+
+.event-date{
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:#666;
+
+    margin-bottom:3px;
+
+}
+
+.event-name{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+
+
+/*
+==========================================================
+    DISCIPLÍNY
+==========================================================
+*/
+
+.equipment{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:8px;
+
+}
+
+.location{
+
+    width:95%;
+
+    margin:0 auto;
+
+    padding:3px 16px;
+
+    background:#f4f6f8;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.75);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.05),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+}
+
+
+
+/*
+==========================================================
+    CHECKBOX
+==========================================================
+*/
+
+.check-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    padding:4px 0;
+
+}
+
+.check-item input{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+    border:2px solid #cfd6dd;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+}
+
+.check-item input:checked{
+
+    background:#3bb54a;
+
+    border-color:#3bb54a;
+
+}
+
+.check-item input:checked::after{
+
+    content:"✓";
+
+    color:white;
+
+    font-size:9px;
+
+    font-weight:700;
+
+}
+
+.check-item span{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+
+
+/*
+==========================================================
+    TLAČÍTKO
+==========================================================
+*/
+
+#continueButton{
+
+    width:95%;
+
+    height:42px;
+
+    display:block;
+
+    margin:16px auto 30px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#d71920;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 6px 16px rgba(215,25,32,.22);
+
+    transition:
+        transform .18s ease,
+        opacity .18s ease,
+        box-shadow .18s ease;
+
+}
+
+#continueButton:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 10px 20px rgba(215,25,32,.28);
+
+}
+
+#continueButton:active{
+
+    transform:scale(.985);
+
+    opacity:.85;
+
+}
