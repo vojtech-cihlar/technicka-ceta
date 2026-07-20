@@ -1,13 +1,7 @@
-console.log("NAČTEN NOVÝ director-disciplines.js");
-
 const event = JSON.parse(localStorage.getItem("selectedEvent"));
 
-const datum = new Date(event.date);
-
-const text =
-    `${datum.getDate()}. ${datum.getMonth()+1}. ${datum.getFullYear()} • ${event.name}`;
-
-document.getElementById("infoText").textContent = text;
+document.getElementById("infoText").textContent =
+    `${event.date} • ${event.name}`;
 
 let selectedDisciplines = [];
 
@@ -25,44 +19,81 @@ async function nactiDiscipliny() {
 
     }
 
-    const container = document.getElementById("disciplinesContainer");
+    const container =
+        document.getElementById("disciplinesContainer");
 
     container.innerHTML = "";
 
     data.forEach(discipline => {
 
         const card = document.createElement("div");
+
         card.className = "location";
 
         card.innerHTML = `
 
-            <label class="check-item">
+            <div class="discipline-row">
 
-                <input type="checkbox">
+                <label class="check-item">
 
-                <span>${discipline.name}</span>
+                    <input type="checkbox">
 
-            </label>
+                    <span>${discipline.name}</span>
+
+                </label>
+
+                <button
+                    class="duplicate-button"
+                    type="button"
+                    disabled>
+
+                    +
+
+                </button>
+
+            </div>
 
         `;
 
-        const checkbox = card.querySelector("input");
+        const checkbox =
+            card.querySelector("input");
+
+        const plusButton =
+            card.querySelector(".duplicate-button");
 
         checkbox.addEventListener("change", () => {
 
             if (checkbox.checked) {
 
-                selectedDisciplines.push(discipline);
+                selectedDisciplines.push({
+
+                    id: discipline.id,
+                    name: discipline.name
+
+                });
+
+                plusButton.disabled = false;
 
             } else {
 
-                selectedDisciplines = selectedDisciplines.filter(
-                    d => d.id !== discipline.id
-                );
+                selectedDisciplines =
+                    selectedDisciplines.filter(
+                        d => d.id !== discipline.id
+                    );
+
+                plusButton.disabled = true;
 
             }
 
             console.table(selectedDisciplines);
+
+        });
+
+        plusButton.addEventListener("click", () => {
+
+            console.log(
+                `Přidat další sektor disciplíny: ${discipline.name}`
+            );
 
         });
 
@@ -79,13 +110,11 @@ document
 .addEventListener("click", () => {
 
     localStorage.setItem(
-
         "selectedDisciplines",
-
         JSON.stringify(selectedDisciplines)
-
     );
 
-    window.location.href = "director-equipment.html";
+    window.location.href =
+        "director-equipment.html";
 
 });

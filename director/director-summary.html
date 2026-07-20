@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Souhrn závodu</title>
+
+    <!-- Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="director.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- TLAČÍTKO ZPĚT -->
+    <!-- ========================================= -->
+
+    <a href="director-equipment.html"
+       class="back-button">
+
+        <svg
+            class="back-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none">
+
+            <path
+                d="M15 18L9 12L15 6"
+                stroke="currentColor"
+                stroke-width="2.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+        </svg>
+
+    </a>
+
+    <!-- ========================================= -->
+    <!-- HORNÍ LIŠTA -->
+    <!-- ========================================= -->
+
+    <div class="topbar">
+
+        <div class="brand">
+
+            <img src="../images/logo/logo.png"
+                 class="logo">
+
+            <h1>Technická četa</h1>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- ZÁVOD -->
+    <!-- ========================================= -->
+
+    <div class="ticker">
+
+        <div class="ticker-line"></div>
+
+        <div class="ticker-content">
+
+            <p id="infoText"></p>
+
+        </div>
+
+        <div class="ticker-line"></div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- SOUHRN -->
+    <!-- ========================================= -->
+
+    <main
+        class="equipment"
+        id="summaryContainer">
+
+    </main>
+
+    <!-- ========================================= -->
+    <!-- TLAČÍTKO -->
+    <!-- ========================================= -->
+
+    <button id="continueButton">
+
+        Uložit závod
+
+    </button>
+
+    <!-- ========================================= -->
+    <!-- SCRIPTY -->
+    <!-- ========================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <script src="../js/supabase.js"></script>
+
+    <script src="director-summary.js"></script>
+
+</body>
+
+</html>

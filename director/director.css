@@ -520,3 +520,82 @@ body{
     opacity:.85;
 
 }
+
+/*
+==========================================================
+    SOUHRN
+==========================================================
+*/
+
+.summary-item{
+
+    padding:4px 0;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    color:#444;
+
+    line-height:1.5;
+
+}
+
+/*
+==========================================================
+    DUPLIKACE DISCIPLÍNY
+==========================================================
+*/
+
+.discipline-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.duplicate-button{
+
+    border:none;
+
+    background:none;
+
+    color:#9aa3ad;
+
+    font-size:18px;
+
+    font-weight:300;
+
+    cursor:pointer;
+
+    padding:0 2px;
+
+    transition:.15s;
+
+}
+
+.duplicate-button:hover{
+
+    color:#d71920;
+
+}
+
+.duplicate-button:active{
+
+    transform:scale(.9);
+
+}
+
+.duplicate-button:disabled{
+
+    color:#c7ccd2;
+
+    cursor:default;
+
+    opacity:.45;
+
+}
+
